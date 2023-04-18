@@ -10,7 +10,7 @@ export function Header({ handleOpenNewTransactionModal }: HeaderProps) {
   return (
     <Container>
       <Content>
-        <img src="vite.svg" alt="dt money" />
+        <h1 className='logo'>DT Money</h1>
         <button type='button' onClick={handleOpenNewTransactionModal}>
           Nova Transação
         </button>

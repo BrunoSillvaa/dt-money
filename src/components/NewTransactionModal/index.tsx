@@ -1,4 +1,4 @@
-import { Container,RadioBox, TransactionTypeContainer } from './styles'
+import { Container, RadioBox, TransactionTypeContainer } from './styles'
 import Modal from 'react-modal'
 import { FormEvent, useContext, useState } from 'react'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
@@ -10,7 +10,10 @@ interface NewTransactionModalProps {
   onRequestClose: () => void
 }
 
-export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModalProps) {
+export function NewTransactionModal({
+  isOpen,
+  onRequestClose
+}: NewTransactionModalProps) {
   const [type, setType] = useState('deposit')
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
@@ -32,11 +35,10 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
         setAmount(0)
         setCategory('')
         setType('deposit')
-    
+
         onRequestClose()
       })
-      .catch(error => console.log(error))
-
+      .catch((error) => console.log(error))
   }
 
   return (
@@ -46,10 +48,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
       overlayClassName='react-modal-overlay'
       className='react-modal-content'
     >
-      <button
-        onClick={onRequestClose}
-        className='react-modal-close-icon'
-      >
+      <button onClick={onRequestClose} className='react-modal-close-icon'>
         <IoIosClose />
       </button>
 
@@ -88,7 +87,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
             onClick={() => setType('withdraw')}
           >
             <AiOutlineArrowDown className='icon' />
-            <span>Entrada</span>
+            <span>Saida</span>
           </RadioBox>
         </TransactionTypeContainer>
 

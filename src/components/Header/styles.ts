@@ -11,6 +11,20 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 500px) {
+    padding: 2rem 1rem 10rem;
+  }
+
+  .logo {
+    color: white;
+    
+    @media (max-width: 500px) {
+      font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+    }
+  }
+
   button {
     font-size: 1rem;
     color: #FFF;
